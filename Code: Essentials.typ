@@ -127,3 +127,76 @@ $ - item numbering: nav>ul>li.item$*3 =>
 {} - text: a{Click me!} =>
     <a href="...">Click me!</a>
 ```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 5: HTML: Forms & Tables
+#line(length: 100%)
+HTML Tables:
+```html
+<table>...</table> - table
+<td>...</td> - table data (cell)
+<th>...</th> - table header (bold)
+<tr>...</tr> - table row
+<thead>...</thead> - table header (row)
+<tbody>...</tbody> - table body (row)
+<tfoot>...</tfoot> - table footer (row)
+<th rowspan="2">...</th> - table header (row span)
+<th colspan="2">...</th> - table header (column span)
+```
+\
+HTML: Forms
+```html
+<form action="...">...</form> - form with an action / link ("/" + to where the form goes; f.e. /home)
+<input type="..."> - input
+<input type="..." placeholder="..."> - placeholder
+
+Text input form with placeholder "name":
+<form action="...">
+    <input type="text" placeholder="name">
+</form>
+
+<label for="...">...</label> - label for input
+
+Using label (for = unique id of the input):
+<label for="name">Name</label>
+<input type="text" id="name" placeholder="name">
+
+<input type="text" name="name"> - input with name (for the server; f.e. after submitting the form, name=John or https://www.google.com/search?q=John)
+
+<button type="submit">...</button> - button (goes to the action of the form)
+<button type="reset">...</button> - reset button (resets the form)
+<button type="button">...</button> - button (does not go to the action of the form)
+
+<input type="checkbox" name="..."> - checkbox with name
+<input type="radio" name="..."> - radio button with name
+<input type="..." name="..." value="..."> - value of the input (f.e. for checkbox or radio button)
+<select>...</select> - select box
+<option>...</option> - option in the select box
+
+Drop down:
+<select name="..." id="...">
+    <option value="1">...</option>
+    <option value="2">...</option>
+</select>
+
+<input type="range" id="..." min="..." max="..." step="..." value="..." name="..."> - range input (slider); value is the default(start) value
+<input type="color" id="..." name="..."> - color input
+...
+
+<textarea>...</textarea> - text area (multiline input)
+<textarea id="..." rows="..." cols="...">...</textarea> - text area with rows and columns
+```
+\
+Built in validations:
+```html
+<input type="text" minlength="..."> - minimum length of the input
+<input type="text" maxlength="..."> - maximum length of the input
+<input type="text" required> - required input (must be filled out | must be not empty)
+```
