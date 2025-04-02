@@ -7,7 +7,7 @@
 = Commands:
 ``` Shift + Opt + F``` - format the Document in VS Code \
 ``` Shift + Opt + ```$arrow.t"/" arrow.b$ - duplicate line in up or down direction
-
+``` fn/option ``` - write text in multiple places
 
 
 
@@ -234,7 +234,7 @@ External style (using CSS):
 </body>
 ```
 #set align(center)
-External style: link to CSS (href:"style.css"\
+External style: link to CSS (href:"style.css")\
 $arrow.b$
 #set align(left)
 ```css
@@ -246,21 +246,118 @@ h1 {
 \
 Color changing in CSS:
 ```css
-... {color: red;} - CSS color
-... {background-color: red;} - CSS background color
-... {background: red;} - CSS background (color, image, position, repeat, size)
-... {color: rgb(255, 0, 0);} - CSS color (RGB)
-... {color: #FF0000;} - CSS color (hexadecimal)
+... {color: red;}
+/* CSS color*/
+... {background-color: red;}
+/* CSS background color*/
+... {background: red;}
+/* CSS background (color, image, position, repeat, size)*/
+... {color: rgb(255, 0, 0);}
+/* CSS color (RGB)*/
+... {color: #FF0000;}
+/* CSS color (hexadecimal)*/
 ```
 \
 Text properties:
 ```css
-... {text-align: center;} - CSS text alignment (can be left, right, center, justify)
-... {width: 100px;} - CSS width
-... {height: 100px;} - CSS height
-... {font-weight: bold;} - CSS font weight (can be normal, bold, bolder, lighter)
-... {font-size: 20px;} - CSS font size
-... {text-decoration: underline;} - CSS text decoration (can be none, underline, overline, linethrough)
-... {letter-spacing: 2px;} - CSS letter spacing
-... {font-family: Arial, sans-serif;} - CSS font family (can be serif, sans serif, monospace, cursive, fantasy)
+... {text-align: center;}
+/* CSS text alignment (can be left, right, center, justify)*/
+... {width: 100px;}
+/* CSS width*/
+... {height: 100px;}
+/* CSS height*/
+... {font-weight: bold;}
+/* CSS font weight (can be normal, bold, bolder, lighter)*/
+... {font-size: 20px;}
+/* CSS font size*/
+... {text-decoration: underline;}
+/* CSS text decoration (can be none, underline, overline, linethrough)*/
+... {letter-spacing: 2px;}
+/* CSS letter spacing*/
+... {font-family: Arial, sans-serif;}
+/* CSS font family (can be serif, sans serif, monospace, cursive, fantasy) */
+```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 7: The World of CSS Selectors
+#line(length: 100%)
+```css
+* {color: red;}
+/*CSS universal selector (selects all elements)*/
+... , ... {color: red;}
+/*CSS group selector (selects all elements with the same style)*/
+#id {color: red;}
+/*CSS id selector (selects the element with the id)*/
+.class {color: red;}
+/*CSS class selector (selects all elements with the class; fe. <span class="class"> ... </span>)*/
+... ... {color: red;}
+/*CSS descendant selector (selects all elements inside the element, fe. all paragraphs p inside the div)*/
+... + ... {color: red;}
+/*CSS adjacent sibling selector (selects the element that is next to the element; fe. h1 and p are siblings/are next to each other => h1 + p)*/
+... > ... {color: red;}
+/*CSS child selector (selects the element that is a child of the element; fe. h1 is child of the div => div > h1 => h1 will be changed)*/
+... [ ... = "..."] {color: red;}
+/* CSS attribute selector (selects the element with the attribute; fe. input with type text => input[type="text"] or section[class="class"] => section with class "class") */
+... [ ... *= "..."] {color: red;}
+/* CSS attribute selector (selects the element with the attribute that contains the value; fe. input with type text => input[type*="text"] or section[class*="class"] => section with class "class") */
+```
+\
+Pseudo classes:
+```css
+... :hover {color: red;}
+/* CSS hover selector (selects the element when the mouse is over it) */
+... :checked {color: red;}
+/* CSS checked selector (selects the element when it is checked; f.e. checkbox or radio button) */
+... :nth-of-type(2n) {color: red;}
+/* CSS nth type selector (selects the element that is the nth child of the element; f.e. every second child => 2n) */
+```
+\
+Pseudo elements:
+```css
+... ::after {color: red;}
+/* CSS after selector (selects the element after the element) */
+... ::before {color: red;}
+/* CSS before selector (selects the element before the element) */
+... ::first-letter {color: red;}
+/* CSS first letter selector (selects the first letter of the element) */
+... ::first-line {color: red;}
+/* CSS first line selector (selects the first line of the element) */
+... ::selection {color: red;}
+/* CSS selection selector (selects the selected text of the element) */
+```
+\
+The CSS Cascade:
+```css
+h1 {color:red}
+h1 {color:blue}
+
+=> h1 is blue
+```
+\
+CSS Specificity:
+```css
+ID > Class > Element
+
+section p {color:teal;} /* => 0 0 2 */
+#submit {color: olive;} /* => 1 0 0 */
+/* 1 0 0 is far more specific than 0 0 2 */
+nav a.active {color: orange;} /* => 0 1 2 */
+
+Also: Inline styles > ID
+
+... {color: red !important;} /* !important is the most important
+=> !important > Inline styles > ID > Class > Element */
+```
+\
+CSS Inheritance:
+```css
+/* certain things don't inherit at default: buttons, input, etc. ... */
+button {color: inherit;} /* inherit color from the parent element */
 ```
