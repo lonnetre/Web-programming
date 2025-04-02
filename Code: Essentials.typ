@@ -3,12 +3,21 @@
 #show: codly-init.with()
 #codly(languages: codly-languages) // install emojis for the programm language
 
-= Section 3: HTML: The Essentials
-#line(length: 100%)
-Commands:\
+
+= Commands:
 ``` Shift + Opt + F``` - format the Document in VS Code \
 ``` Shift + Opt + ```$arrow.t"/" arrow.b$ - duplicate line in up or down direction
-\ \
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 3: HTML: The Essentials
+#line(length: 100%)
 Essentials:
 ```html 
 <b>...</b> - bold text
@@ -199,4 +208,59 @@ Built in validations:
 <input type="text" minlength="..."> - minimum length of the input
 <input type="text" maxlength="..."> - maximum length of the input
 <input type="text" required> - required input (must be filled out | must be not empty)
+```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 6: CSS: The Very Basics
+#line(length: 100%)
+Styles:
+```html
+Style element:
+<h1 style="color: red;">...</h1> - inline style (not recommended)
+
+External style (using CSS):
+<head>
+    <link rel="stylesheet" href="style.css"> - link to the CSS file (in the head of the HTML file; works automatically)
+</head>
+<body>
+    <h1>...</h1>
+</body>
+```
+#set align(center)
+External style: link to CSS (href:"style.css"\
+$arrow.b$
+#set align(left)
+```css
+style.css:
+h1 {
+    color: red;
+}
+```
+\
+Color changing in CSS:
+```css
+... {color: red;} - CSS color
+... {background-color: red;} - CSS background color
+... {background: red;} - CSS background (color, image, position, repeat, size)
+... {color: rgb(255, 0, 0);} - CSS color (RGB)
+... {color: #FF0000;} - CSS color (hexadecimal)
+```
+\
+Text properties:
+```css
+... {text-align: center;} - CSS text alignment (can be left, right, center, justify)
+... {width: 100px;} - CSS width
+... {height: 100px;} - CSS height
+... {font-weight: bold;} - CSS font weight (can be normal, bold, bolder, lighter)
+... {font-size: 20px;} - CSS font size
+... {text-decoration: underline;} - CSS text decoration (can be none, underline, overline, linethrough)
+... {letter-spacing: 2px;} - CSS letter spacing
+... {font-family: Arial, sans-serif;} - CSS font family (can be serif, sans serif, monospace, cursive, fantasy)
 ```
