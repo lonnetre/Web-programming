@@ -6,8 +6,8 @@
 
 = Commands:
 ``` Shift + Opt + F``` - format the Document in VS Code \
-``` Shift + Opt + ```$arrow.t"/" arrow.b$ - duplicate line in up or down direction
-``` fn/option ``` - write text in multiple places
+``` Shift + Opt + ```$arrow.t"/" arrow.b$ - duplicate line in up or down direction \
+``` fn/option ```- write text in multiple places
 
 
 
@@ -360,4 +360,64 @@ CSS Inheritance:
 ```css
 /* certain things don't inherit at default: buttons, input, etc. ... */
 button {color: inherit;} /* inherit color from the parent element */
+```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 8: The CSS Box Model
+#line(length: 100%)
+```css
+... {width: 100px;} /* width of the element */
+... {height: 100px;} /* height of the element */
+```
+\
+Border: 
+```css
+... {border: 1px solid red;} /* border (width, style, color) */
+... {border_width: 1px;} /* border width */
+... {border_style: solid;} /* border style (solid, dotted, dashed, double, groove, ridge, inset, outset) */
+... {border_color: red;} /* border color */
+... {box-sizing: border-box;} /* box sizing (content-box, border-box) */
+... {border-radius: 10px;} /* border radius (round corners) */
+```
+\
+Padding:
+```css
+... {padding: 10px;} /* padding (top, right, bottom, left) */
+... {padding: 10px 20px;} /* padding (top/bottom, right/left) */
+```
+\
+Margins:
+```css
+... {margin: 10px;} /* margin (top, right, bottom, left) */
+... {margin: 10px 20px;} /* margin (top/bottom, right/left) */
+```
+\
+Display properties:
+```css
+... {display: block;} /* display block (takes the whole width) */
+... {display: inline;} /* display inline (takes the width of the content) */
+... {display: inline-block;} /* display inline block (takes the width of the content, but can have width and height) */
+... {display: flex;} /* display flex (flexbox) */
+... {display: grid;} /* display grid (grid) */
+```
+\
+CSS Units:
+```css
+/* Font size:
+1em = the font-size of the parent
+2em = 2 times the font-size of the parent
+
+1rem = the font-size of the root element (html)
+2rem = 2 times the font-size of the root element (html) 
+
+Other properties:
+1em = computed from font-size of the element itself
+*/
 ```
