@@ -418,6 +418,67 @@ CSS Units:
 2rem = 2 times the font-size of the root element (html) 
 
 Other properties:
-1em = computed from font-size of the element itself
-*/
+1em = computed from font-size of the element itself */
+```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 9: Other Assorted Useful CSS Properties
+Alpha:
+```css
+... {color: rgb(0, 0, 0, alpha)} /* color (RGB with alpha) */
+... {opacity: 0.5;} /* opacity (0 = transparent, 1 = opaque) */
+```
+\
+Positions:
+```css
+... {position: static;} /* static (default) */
+... {position: relative;} /* relative (relative to the element itself) */
+... {position: absolute;} /* absolute (relative to the parent element) */
+... {position: fixed;} /* fixed (relative to the viewport(containbox)) */
+... {position: sticky;} /* sticky (relative to the viewport, but only when scrolling) */
+```
+\
+Transitions:
+```css
+... {transition: 1s} /* transition (time) */
+... {transition: property name duration timingFunction delay} /* transition (property name, duration, timing function, delay) */
+... {transition-timing-function: ease;} /* transition timing function (ease, linear, ease-in, ease-out, ease-in-out) */
+```
+\
+Transforming:
+```css
+... {transform: rotate(45deg);} /* transform (rotate) */
+... {transform-origin: top left;} /* transform origin (where the element is transformed from) */
+... {transform: scale(1.5);} /* transform (scale) */
+... {transform: translate(10px, 20px);} /* transform (translate X and Y) */
+... {transform: skew(10deg);} /* transform (skew) */
+```
+\
+Background:
+```css
+... {background-image: url(image.png);} /* background image */
+... {background-size: cover;} /* background size (cover, contain) */
+... {background-position: center;} /* background position (top, bottom, left, right, center) */
+... {background-repeat: no-repeat;} /* background repeat (no-repeat, repeat, repeat-x, repeat-y) */
+or
+... {background: url(image.png) no-repeat center / cover;} /* background (image, repeat, position, size) */
+```
+\
+Google Fonts:
+```css
+font-family: 'Roboto', sans-serif; /* font family (Google Fonts) */
+```
+#set align(center)
+Import Google font using link in HTML\
+$arrow.b$
+#set align(left)
+```html
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"> /* link to Google Fonts */
 ```
