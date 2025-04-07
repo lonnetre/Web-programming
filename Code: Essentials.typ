@@ -482,3 +482,42 @@ $arrow.b$
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"> /* link to Google Fonts */
 ```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 10: Responsive CSS & flexbox
+#line(length: 100%)
+Flexbox
+```css
+... {display: flex} /* display flex (flexbox) */
+... {flex-direction: row} /* flex direction (row, column, row-reverse) */
+... {justify-content: center} /* justify content (center, flex-start, flex-end, space-between, space-around, space-evenly)*/
+... {flex-wrap: wrap} /* flex wrap (wrap, nowrap, wrap-reverse) */
+... {align-items: center} /* align items (center, flex-start, flex-end, stretch) */
+... {align-content: center} /* align content (center, flex-start, flex-end, stretch) */
+... {align-self: center} /* align self (center, flex-start, flex-end, stretch); is just for one element */
+... {flex-basis: 100px} /* flex basis (width of the element); depending on the main axis: height or width */
+... {flex-grow: 1} /* flex grow (how much the element grows); 1 - takes all available space, 2 - twice as much space as 1, ... */
+... {flex-shrink: 1} /* flex shrink (how much the element shrinks) */
+... {flex: 1} /* flex (flex-grow, flex-shrink, flex-basis) */
+... {flex: 1 0 100px} /* flex (flex-grow, flex-shrink, flex-basis) */
+```
+\
+Responsive CSS
+```css
+@media (min-width: 600px) { /* media query (min-width, max-width, width) */
+    ... {color: red;} /* CSS code for the media query */
+}
+@media (min-width: 600px) and max-width: 800) { 
+    ... {color: red;}
+}
+@media (orientation: landscape) { /* media query (orientation) */
+    ... {color: red;} 
+}
+```
