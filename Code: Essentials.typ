@@ -521,3 +521,18 @@ Responsive CSS
     ... {color: red;} 
 }
 ```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 11: Pricing Panel Project
+#line(length: 100%)
+```css
+...: last-child {color: red;} /* CSS last child selector (selects the last child of the element) */
+...: first-child {color: red;} /* CSS first child selector (selects the first child of the element) */
+```
