@@ -8,7 +8,9 @@
 ``` Shift + Opt + F``` - format the Document in VS Code \
 ``` Shift + Opt + ```$arrow.t"/" arrow.b$ - duplicate line in up or down direction \
 ``` fn/option ```- write text in multiple places
-
+\ \
+= Links:
+- https://getbootstrap.com/docs/5.3/getting-started/introduction/ - Bootstrap
 
 
 #pagebreak()
@@ -535,4 +537,109 @@ Responsive CSS
 ```css
 ...: last-child {color: red;} /* CSS last child selector (selects the last child of the element) */
 ...: first-child {color: red;} /* CSS first child selector (selects the first child of the element) */
+```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 12: CSS Frameworks: Bootstrap
+#line(length: 100%)
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+
+\
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"> - link to Bootstrap 
+```
+\
+```javascript
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
+```
+\
+```html
+<div class="container">...</div> - container (Bootstrap)
+<div class="container-fluid">...</div> - container fluid (Bootstrap)
+<button type="button" class="btn btn-outline-info btn-lg"></button> - button (Bootstrap)
+<h1 class="display-1">...</h1> - heading (Bootstrap)
+<blockquote class="blockquote text-right">...</blockquote> - blockquote (Bootstrap)
+<button class="btn btn-warning">...</button> - button (Bootstrap) - button.btn.btn-warning
+
+Close button (Bootstrap):
+<button aria-label="Close" class="close" data-dismiss="alert">
+    <span aria-hidden="true">&times;</span>
+</button>
+
+Grid system:
+<div class="container">
+    <div class="row">
+        <div class="col-6">...</div> - .col-6 (max is 12 = full grid)
+        <div class="col-6">...</div> - .col-6 (max is 12 = full grid)
+    </div>
+or
+    <div class="row">
+        <div class="col">...</div> - .col (even space)
+        <div class="col">...</div> - .col (even space)
+    </div>
+</div>
+
+Responsive grid system:
+<div class="col-md-6">...</div> - .col-md-6 (stacks below medium = md)
+<div class="col-xl-6">...</div> - .col-xl-6 (stacks below extra large = xl)
+
+Align items:
+<div class="row align-items-start">...</div> - (align items start)
+<div class="row justify-comtent-center">...</div> - (justify content center)
+
+Forms:
+<form action="...">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="name" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <select name="state" id="state" class="form-control">
+            <option value="1">...</option>
+            <option value="2">...</option>
+        </select>
+    </div>
+</form>
+
+Custom checkbox:
+<div class="class-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customCheck1">
+    <label class="custom-control-label" for="customCheck1">Custom checkbox</label>
+</div>
+
+Navbar:
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home</a>
+            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </div>
+    </div>
+</nav>
+
+Icons:
+<button class="...">...<svg ...>...</svg></button> - button with icon (Bootstrap)
+
+Other Utilities:
+<span class="border">...</span> - border
+<div class="shadow">...</div> - shadow
+
+Padding:
+<button class="btn p-0">...</button> - padding (from 0 - 5)
 ```
