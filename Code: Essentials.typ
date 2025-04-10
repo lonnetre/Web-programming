@@ -5,9 +5,10 @@
 
 
 = Commands:
-``` Shift + Opt + F``` - format the Document in VS Code \
+``` Shift + Opt + F ``` - format the Document in VS Code \
 ``` Shift + Opt + ```$arrow.t"/" arrow.b$ - duplicate line in up or down direction \
-``` fn/option ```- write text in multiple places
+``` fn/option ```- write text in multiple places \
+``` Opt + Command + J ```- open Console (javascript) in Browser 
 \ \
 = Links:
 - https://getbootstrap.com/docs/5.3/getting-started/introduction/ - Bootstrap
@@ -569,13 +570,17 @@ https://getbootstrap.com/docs/5.3/getting-started/introduction/
 <h1 class="display-1">...</h1> - heading (Bootstrap)
 <blockquote class="blockquote text-right">...</blockquote> - blockquote (Bootstrap)
 <button class="btn btn-warning">...</button> - button (Bootstrap) - button.btn.btn-warning
-
+```
+\
 Close button (Bootstrap):
+```html
 <button aria-label="Close" class="close" data-dismiss="alert">
     <span aria-hidden="true">&times;</span>
 </button>
-
+```
+\
 Grid system:
+```html
 <div class="container">
     <div class="row">
         <div class="col-6">...</div> - .col-6 (max is 12 = full grid)
@@ -587,16 +592,22 @@ or
         <div class="col">...</div> - .col (even space)
     </div>
 </div>
-
+```
+\
 Responsive grid system:
+```html
 <div class="col-md-6">...</div> - .col-md-6 (stacks below medium = md)
 <div class="col-xl-6">...</div> - .col-xl-6 (stacks below extra large = xl)
-
+```
+\
 Align items:
+```html
 <div class="row align-items-start">...</div> - (align items start)
 <div class="row justify-comtent-center">...</div> - (justify content center)
-
+```
+\
 Forms:
+```html
 <form action="...">
     <div class="form-group">
         <label for="email">Email</label>
@@ -611,14 +622,18 @@ Forms:
         </select>
     </div>
 </form>
-
+```
+\
 Custom checkbox:
+```html
 <div class="class-control custom-checkbox">
     <input type="checkbox" class="custom-control-input" id="customCheck1">
     <label class="custom-control-label" for="customCheck1">Custom checkbox</label>
 </div>
-
+```
+\
 Navbar:
+```html
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup">
@@ -632,14 +647,39 @@ Navbar:
         </div>
     </div>
 </nav>
-
+```
+\
 Icons:
+```html
 <button class="...">...<svg ...>...</svg></button> - button with icon (Bootstrap)
-
+```
+\
 Other Utilities:
+```html
 <span class="border">...</span> - border
 <div class="shadow">...</div> - shadow
-
+```
+\
 Padding:
+```html
 <button class="btn p-0">...</button> - padding (from 0 - 5)
 ```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 14: JavaScript Basics!
+#line(length: 100%)
+``` Browser -> Inspect -> Console = JavaScript```
+```javascript
+typeof <variable> // type of the variable
+NaN // not a number
+let <variable> = <value>; // variable declaration
+const <variable> = <value>; // constant declaration
+var <variable> = <value>; // old variable declaration (not recommended)
+``` 
