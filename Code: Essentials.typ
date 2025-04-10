@@ -687,11 +687,7 @@ var <variable> = <value>; // old variable declaration (not recommended)
 
 
 
-#pagebreak()
-
-
-
-
+\
 = Section 15: JavaScript Strings and More
 #line(length: 100%)
 ```javascript
@@ -702,4 +698,30 @@ var <variable> = <value>; // old variable declaration (not recommended)
 "<string> ${variable}" // string interpolation
 let <variable> = null // null
 let <variable> = undefined // undefined
+```
+
+
+
+\
+= Section 16: JavaScript Decision Making
+#line(length: 100%)
+```javascript
+console.log("...") // print to console
+console.error("...") // print error to console
+alert("...") // alert
+prompt("...") // prompt, like alert, but with input f.e. let var = prompt("...")
+```
+\
+Using JavaScript
+```html
+<body>
+    <!-- Code -->
+    <script src="script.js"></script> <!-- link to JavaScript file -->
+</body>
+```
+\
+Truthy and falsy values:
+```javascript
+// falsy values: 0, "", null, undefined, NaN
+// everything else is truthy
 ```
