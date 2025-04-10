@@ -725,3 +725,35 @@ Truthy and falsy values:
 // falsy values: 0, "", null, undefined, NaN
 // everything else is truthy
 ```
+
+
+
+\
+= Section 17: JavaScript Arrays
+#line(length: 100%)
+```javascript
+let <array> = [1, 2, "a"] // array declaration; arrays are dynamic
+<array>[n] = "b" // add element to array
+<array>.push("b") // add element to array
+<array>.pop() // remove last element from array
+<array>.shift() // remove first element from array
+<array>.unshift("b") // add element to the beginning of the array
+<array>.concat([1, 2]) // concatenate arrays
+<array>.includes("a") // check if array includes element
+<array>.indexOf("a") // get index of element
+<array>.reverse // reverse array
+<array>.slice(0, 2) // slice array from index 0 to index 2
+<array>.slice(1) // slice array from index 1 to end
+<array>.splice(0, 2) // remove elements from index 0 to index 2
+[1,2,3] === [1,2,3] // false (arrays are reference types)
+
+num = [1,2,3]
+numCopy = num
+num === numsCopy // true (both are the same reference)
+
+const <array> can be changed, but not reassigned
+f.e.
+const <array> = [1,2,3]
+<array>[0] = 4 // ok
+<array> = [4,5,6] // error
+```
