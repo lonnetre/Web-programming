@@ -683,3 +683,23 @@ let <variable> = <value>; // variable declaration
 const <variable> = <value>; // constant declaration
 var <variable> = <value>; // old variable declaration (not recommended)
 ``` 
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 15: JavaScript Strings and More
+#line(length: 100%)
+```javascript
+<string>.trim() // remove whitespace from the beginning and end of the string
+<string>.slice(<index>) // slice the string from beginning to index
+<string>.slice(<startIndex>, <endIndex>) // slice the string from index to index
+<string>.replace(<oldString>, <newString>) // replace the old string with the new string
+"<string> ${variable}" // string interpolation
+let <variable> = null // null
+let <variable> = undefined // undefined
+```
