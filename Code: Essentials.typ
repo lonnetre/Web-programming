@@ -688,6 +688,10 @@ var <variable> = <value>; // old variable declaration (not recommended)
 
 
 \
+
+
+
+
 = Section 15: JavaScript Strings and More
 #line(length: 100%)
 ```javascript
@@ -703,6 +707,10 @@ let <variable> = undefined // undefined
 
 
 \
+
+
+
+
 = Section 16: JavaScript Decision Making
 #line(length: 100%)
 ```javascript
@@ -729,6 +737,10 @@ Truthy and falsy values:
 
 
 \
+
+
+
+
 = Section 17: JavaScript Arrays
 #line(length: 100%)
 ```javascript
@@ -756,4 +768,40 @@ f.e.
 const <array> = [1,2,3]
 <array>[0] = 4 // ok
 <array> = [4,5,6] // error
+```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 18: JavaScript Object Literals
+#line(length: 100%)
+```javascript
+const person = {
+    firstName: 'Mick',
+    lastName: 'Jagger',
+    age: 18
+}
+person['firstName'] // get value of firstName
+person.firstName // get value of firstName
+person['first' + 'Name'] // get value of firstName
+person.firstName = 'John' // set value of firstName
+
+// Nested structure:
+const students = {
+    student1: {
+        firstName: 'Mick',
+        lastName: 'Jagger',
+        age: 18
+    },
+    student2: {
+        firstName: 'John',
+        lastName: 'Doe',
+        age: 20
+    }
+}
 ```
