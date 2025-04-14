@@ -840,3 +840,19 @@ for (let value of Object.values(<object>)) {
     console.log(value)
 }
 ```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 20: Introduction Functions
+#line(length: 100%)
+```javascript
+function <name>(<parameters>) {
+    // code
+}
+```
