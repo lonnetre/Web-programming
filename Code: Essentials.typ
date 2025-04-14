@@ -856,3 +856,47 @@ function <name>(<parameters>) {
     // code
 }
 ```
+
+
+
+
+\
+
+
+
+
+= Section 21: Leveling Up Functions
+#line(length: 100%)
+```javascript
+// Function Expressions
+const <name> = function(<parameters>) {
+    // code
+}
+
+// Higher Order Functions = function as parameter
+const <name> = function(<parameters>, <callback>) {
+    // code
+    <callback>(<parameters>)
+}
+
+// Returning Functions
+const <name> = function(<parameters>) {
+    return function(<parameters>) {
+        // code
+    }
+}
+
+// Methods
+const <object> = {
+    <name>: function(<parameters>) {
+        // code
+    }
+}
+
+// try/catch
+try {
+    // code
+} catch (error) {
+    console.log(error)
+}
+```
