@@ -805,3 +805,38 @@ const students = {
     }
 }
 ```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 19: Repeating Stuff With Loops
+#line(length: 100%)
+```javascript
+for (let i = 0; animals.length; i++) {
+    console.log(animals[i])
+}
+
+let <variable> = parseInt(prompt("...")) // parseInt (convert string to number)
+
+// For... of loop: 
+for (let a of <array>) {
+    console.log(a)
+}
+
+Object.keys(<object>) // get keys of object
+Object.values(<object>) // get values of object
+Object.entries(<object>) // get entries of object
+
+for (let [key, value] of Object.entries(<object>)) {
+    console.log(key, value)
+}
+
+for (let value of Object.values(<object>)) {
+    console.log(value)
+}
+```
