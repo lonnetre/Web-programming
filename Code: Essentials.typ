@@ -900,3 +900,84 @@ try {
     console.log(error)
 }
 ```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 22: Callbacks & Array Methods
+#line(length: 100%)
+```javascript
+// For-each loop
+const <array> = [1, 2, 3, 4, 5]
+<array>.forEach(function(<element>) {
+    console.log(<element>)
+})
+
+// Map 
+<array>.map(function(<element>) {
+    return <element> * 2
+})
+
+// Arrow function
+const <name> = (<parameters>) => {
+    // code (does not need return if only one line)
+    // f.e. const add = (a, b) => a + b
+}
+
+// Map + Arrow function
+const <name> = <array>.map(<element> => <element> * 2)
+
+// setTimeout & setInterval
+setTimeout(function() {
+    // code
+}, 1000) // setTimeout (after 1 second)
+
+setInterval(function() {
+    // code
+}, 1000) // setInterval (every 1 second)
+
+const id = setInterval(function() {
+    // code
+}, 1000) // setInterval (every 1 second)
+clearInterval(id) // clear interval
+
+// Filter method (create a new array with elements that pass the test)
+<array>.filter(function(<element>) {
+    return <element> > 2
+})
+
+// Filter + Map 
+<array>.filter(function(<element>) {
+    return <element> > 2
+}).map(function(<element>) {
+    return <element> * 2
+})
+
+// Some (similar to every, but returns true if at least one element is true/passes the test)
+<array>.some(function(<element>) {
+    return <element> > 2
+}) 
+
+// Every (tests whether all elements in the array pass the test implemented by the provided function, returns a Boolean value)
+<array>.every(function(<element>) {
+    return <element> > 2
+})
+
+// Reduce method
+<array>.reduce(function(<accumulator>, <element>) {
+    return <accumulator> + <element>
+}, 0) // reduce (0 is the initial value of the accumulator)
+
+// Arrow functions & this 
+const <name> = function() {
+    <property> = <value>
+    <method> = function() {
+        console.log(this.<property>)
+    }
+}
+```
