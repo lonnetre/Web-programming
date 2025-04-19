@@ -981,3 +981,69 @@ const <name> = function() {
     }
 }
 ```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 23: Newer JavaScript Features
+#line(length: 100%)
+```javascript
+// Deafault params (when param is undefined)
+function <name>(<param1> = 1, <param2> = 2) {
+    // code
+}
+```
+\
+Spread 
+```javascript
+// Spread in function calls
+const <array> = [1, 2, 3]
+Math.max(...<array>) // Math.max(1, 2, 3)
+Math.max(<array>) // NaN
+console.log(...'Hello') // H e l l o
+
+// Spread in array literals 
+const <array1> = [1, 2, 3]
+const <array2> = [4, 5, 6]
+const <array3> = [...<array1>, ...<array2>] // [1, 2, 3, 4, 5, 6]
+const <array4> = [1, 2, 3, ...<array1>] // [1, 2, 3, 1, 2, 3]
+
+// Spread in objects
+const <object1> = {a: 1, b: 2}
+const <object2> = {c: 3, d: 4}
+const <object3> = {...<object1>, ...<object2>} // {a: 1, b: 2, c: 3, d: 4}
+
+// Rest params (when param is an array)
+function <name>(...<params>) {
+    // code
+}
+funcion <name>(a, b, ...<params>) {
+    console.log(a);
+    console.log(b);
+    console.log(<params>);
+}
+<name>(1, 2, 3, 4, 5) // 1, 2, [3, 4, 5]
+```
+\
+Destructuring
+```javascript
+// Destructuring arrays
+const <array> = [1, 2, 3]
+const [<a>, <b>, <c>] = <array> // a = 1, b = 2, c = 3
+
+// Destructuring objects
+const <object> = {a: 1, b: 2}
+const {<a>, <b>} = <object> // a = 1, b = 2
+const {<a>: <newName>} = <object> // a = 1, newName = 1
+
+// Destructuring params 
+function <name>({<a>, <b>}) {
+    console.log(<a>, <b>)
+}
+const <object> = {a: 1, b: 2}
+```
