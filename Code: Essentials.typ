@@ -1047,3 +1047,30 @@ function <name>({<a>, <b>}) {
 }
 const <object> = {a: 1, b: 2}
 ```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 24: DOM 
+#line(length: 100%)
+```javascript
+document // document (HTML document)
+console.dir(document) // show document in console (JavaScript object)
+document.getElementById("id") // get element by id
+document.getElementByTagName("tag") // get element by tag name
+document.getElementsByClassName("class") // get element by class name => HTMLCollection
+document.querySelector("selector") // get just one element by selector (CSS selector) (classes, id, tags, :nth-child, attributes, etc.)
+document.querySelectorAll("selector") // get element/elements by selector (CSS selector) => NodeList
+document.querySelector("selector").innerText // get inner text of the element
+document.querySelector("selector").textContent // get text content of the element
+document.querySelector("selector").innerHTML // get inner HTML of the element (f.e. text with tags)
+document.querySelector("#selector").src // get src of the element (f.e. image)
+document.querySelector("selector").setAttribute("attribute", "value") // set attribute of the element
+<element>.style.<property> = "value" // set style of the element = inline style in HTML (f.e. <h1 style="color: red">)
+window.getComputedStyle(<element>).<property> // get computed style of the element
+```
