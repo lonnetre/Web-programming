@@ -1058,12 +1058,18 @@ const <object> = {a: 1, b: 2}
 
 = Section 24: DOM 
 #line(length: 100%)
+Document
 ```javascript
 document // document (HTML document)
+document.createElement("tag") // create element
 console.dir(document) // show document in console (JavaScript object)
 document.getElementById("id") // get element by id
 document.getElementByTagName("tag") // get element by tag name
 document.getElementsByClassName("class") // get element by class name => HTMLCollection
+```
+\
+QuerySelector
+```javascript
 document.querySelector("selector") // get just one element by selector (CSS selector) (classes, id, tags, :nth-child, attributes, etc.)
 document.querySelectorAll("selector") // get element/elements by selector (CSS selector) => NodeList
 document.querySelector("selector").innerText // get inner text of the element
@@ -1073,4 +1079,103 @@ document.querySelector("#selector").src // get src of the element (f.e. image)
 document.querySelector("selector").setAttribute("attribute", "value") // set attribute of the element
 <element>.style.<property> = "value" // set style of the element = inline style in HTML (f.e. <h1 style="color: red">)
 window.getComputedStyle(<element>).<property> // get computed style of the element
+```
+\
+ClassList
+```javascript
+<element>.classList // get class list of the element
+<element>.classList.add("class") // add class to the element
+<element>.classList.remove("class") // remove class from the element
+<element>.classList.contains("class") // check if element has class -> Boolean
+<element>.classList.toggle("class") // toggle class (add if not present, remove if present)
+<element>.getAttribute("attribute") // get attribute of the element
+```
+\
+Parent, Child, Sibling
+```javascript
+<element>.parentElement // get parent element
+<element>.children // get children of the element (not an array => HTMLCollection)
+<element>.nextElementSibling // get next sibling of the element => Node
+<element>.previousElementSibling // get previous sibling of the element => Node
+document.body.appendChild(<element>) // append child to the end of the body
+document.body.removeChild(<element>) // remove child from the body
+<element>.append(<element>) // append child to the element as the last child
+<element>.prepend(<element>) // append child to the element as the first child
+<element>.insertAdjacentElement(<where>, <element>) // insert element before the element (beforebegin, afterbegin, beforeend, afterend)
+<element>.remove() // remove element
+```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 25: DOM Events
+#line(length: 100%)
+```html
+NOT RECOMMENDED
+<button onclick="function()">...</button> - onclick (HTML)
+```
+\
+```javascript
+const btn = document.querySelector("#<id>") // get button
+btn.onclick = function() { // onclick 
+    // code
+}
+document.querySelector("#<id>").onclick = () => { // onclick
+    // code
+}
+<button>.addEventListener("click", function() { // add event listener (recommended: because of override in inline style)
+    // code
+})
+<button>.addEventListener("<event>", <function>, {once: true}) // add event listener (once: true - remove after first click)
+```
+\
+This in addEventListener
+```javascript
+for (let a in <array>) {
+    a.addEventListener("click", <nameOfFunction>)
+}
+function <nameOfFunction> {
+    this.style.color = "red" // this = element that was clicked => a in <array>
+}
+```
+\
+Keys
+```javascript
+document.querySelector("<element>").addEventListener("keydown", function(event) { // keydown event
+    console.log(event.key) // get key that was pressed (or event.code)
+})
+// or
+window.addEventListener("keydown", function(event) { // keydown event
+    console.log(event.key) // get key that was pressed (or event.code)
+})
+```
+\
+```javascript
+// Form Events and PreventDefaults
+document.querySelector("#id").addEventListener("submit", function(event) { // submit event
+    event.preventDefault() // prevent default action (f.e. reload page)
+    console.log(event.target.elements[0].value) // get value of the first input in the form
+})
+
+// Input and change events
+<element>.addEventListener("input", function(event) { // input event
+    console.log(event.target.value) // get value of the input
+})
+
+// Event Bubbling
+<element>.addEventListener("click", function(event) {
+    // code
+    event.stopPropagation() // stop event bubbling (stop event from going to parent elements)
+})
+
+// Event Delegation
+<element>.addEventListener("click", function(event) {
+    event.target // get element that was clicked
+    // f.e. event.target.nodeName == 'LI' && e.target.remove();
+})
 ```
