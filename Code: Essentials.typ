@@ -9,6 +9,7 @@
 ``` Shift + Opt + ```$arrow.t"/" arrow.b$ - duplicate line in up or down direction \
 ``` fn/option ```- write text in multiple places \
 ``` Opt + Command + J ```- open Console (javascript) in Browser 
+``` Insprect + Sources ```- open Stack
 \ \
 = Links:
 - https://getbootstrap.com/docs/5.3/getting-started/introduction/ - Bootstrap
@@ -1178,4 +1179,99 @@ document.querySelector("#id").addEventListener("submit", function(event) { // su
     event.target // get element that was clicked
     // f.e. event.target.nodeName == 'LI' && e.target.remove();
 })
+```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 27: Async JavaScript
+#line(length: 100%)
+JavaScript is single threaded
+
+\
+
+Callbacks
+```javascript
+<first_function>(<parameter>, () => {
+    <second_function>(<parameter>, () => {
+        // if it works, run this:
+    }, () => {
+        // if it doesn't work, run this:
+    })
+})
+```
+\
+Enter promises
+```javascript
+const <promise> = <function> (<parameter>);
+<promise>
+    .then(() => {
+    // if it works, run this:
+    })
+    .catch(() => {
+    // if it doesn't work, run this:
+    })
+
+const <promise> = new Promise((resolve, reject) => {
+    // code
+    if (<condition>) {
+        resolve(<value>)
+    } else {
+        reject(<error>)
+    }
+})
+```
+\
+Async functions
+```javascript
+// async functions always return a promise 
+async function <name> (<parameter>) {
+    // code
+}
+ 
+// f.e.
+const login = async (username, password) => {
+    if (!username || !password) {
+        throw new Error("Username and password are required")
+    }
+    if (password === "12345") return "Welcome!"
+    throw new Error("Wrong password")
+}
+
+login ("Mick", "12345")
+    .then((msg) => {
+        console.log("Logged in")
+        console.log(msg)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+
+// Logged in 
+// Welcome!
+``` 
+\
+Await keyboard
+```javascript
+async function <name> (<parameter>) {
+    await <promise> // wait for the promise to resolve (insted of .then)
+    // code
+}
+```
+\
+Error handling in async functions
+```javascript
+async function <name> (<parameter>) {
+    try {
+        await <promise> // wait for the promise to resolve (insted of .then)
+        // code
+    } catch (error) {
+        console.log(error)
+    }
+}
 ```
