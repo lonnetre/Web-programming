@@ -8,8 +8,8 @@
 ``` Shift + Opt + F ``` - format the Document in VS Code \
 ``` Shift + Opt + ```$arrow.t"/" arrow.b$ - duplicate line in up or down direction \
 ``` fn/option ```- write text in multiple places \
-``` Opt + Command + J ```- open Console (javascript) in Browser 
-``` Insprect + Sources ```- open Stack
+``` Opt + Command + J ```- open Console (javascript) in Browser \
+``` Inspect + Sources ```- open Stack
 \ \
 = Links:
 - https://getbootstrap.com/docs/5.3/getting-started/introduction/ - Bootstrap
@@ -1273,5 +1273,117 @@ async function <name> (<parameter>) {
     } catch (error) {
         console.log(error)
     }
+}
+```
+
+
+
+
+#pagebreak()
+
+
+
+
+= Section 28: AJAX and API's 
+#line(length: 100%)
+https://hoppscotch.io/ - API testing tool
+
+\
+
+JSON:
+```javascript
+JSON.parse(<data>) // parse JSON data
+JSON.stringify(<data>) // stringify data to JSON 
+``` 
+
+\
+
+Making XHRs:
+```javascript
+const req = new XMLHttpRequest(); // create new XMLHttpRequest
+
+req.onload = function () {
+    console.log("Loaded");
+    const data = JSON.parse(this.responseText); // parse JSON data
+    consoloe.log(data.<property>); // get property from data
+};
+
+req.onerror = function () {
+    console.log("Error");
+    conslo.log(this);
+};
+
+req.open("GET", "https://api.example.com/data"); // open request (GET, POST, PUT, DELETE)
+req.send(); // send request
+```
+
+\
+
+Using Fetch API:
+```javascript
+fetch("https://api.example.com/data");
+    .then(res => {
+        console.log(res);
+        return res.json();
+    })
+    .then(data => {
+        console.log(data);
+        return fetch("https://api.example.com/data2");
+    })
+    .then(res => {
+        console.log(res);
+        return res.json();
+    })  
+    .catch((e) => {
+        console.log(e);
+    });
+
+// or using async function
+
+const getData = async () => {
+    try {
+        const res = await fetch("https://api.example.com/data");
+        const data = await res.json();
+        console.log(data);
+
+        const res2 = await fetch("https://api.example.com/data2");
+        const data2 = await res2.json();
+        console.log(data2);
+    } catch (e) {
+        console.log(e);
+    }
+}
+getData();
+```
+
+\
+
+Axios:
+```html
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+```
+\
+```javascript
+axios.get("https://api.example.com/data")
+    .then(res => {
+        console.log(res);
+        return axios.get("https://api.example.com/data2");
+    })
+    .then(res => {
+        console.log(res);
+    })
+    .catch((e) => {
+        console.log(e);
+    });
+```
+
+\
+
+Setting up headers using Axios:
+```javascript
+const <name> = async () => {
+    const config = {headers: {Accept: "application/json"}}
+    const res = await axios.get("https://api.example.com/data", config);
+    console.log(res);
 }
 ```
